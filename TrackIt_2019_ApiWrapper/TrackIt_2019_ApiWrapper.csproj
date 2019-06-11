@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Russell Rockett</Authors>
+    <Company>Ruscal Tech</Company>
+    <Description>A C# wrapper to use for working with the TrackIt 2019 WebAPI.
+
+TrackIt 2019 is a product of BMC, who does not sponsor this content.</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageTags>TrackIt</PackageTags>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile></PackageLicenseFile>
+    <Copyright>Copyright 2019 Russell Rockett</Copyright>
+    <RootNamespace>TrackIt_2019</RootNamespace>
+    <AssemblyName>TrackIt_2019</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flurl.Http" Version="2.4.2" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
