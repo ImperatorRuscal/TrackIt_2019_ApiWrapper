@@ -17,6 +17,13 @@ namespace Sandbox
             TrackIt_2019.API.Authentication.Password = "";
             TrackIt_2019.API.Authentication.Group = "System Administration";
 
+            dynamic assn = TrackIt_2019.API.Assignment.Get(234);
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(assn));
+
+
+
+            /*
+             
             var ticketProperties = new ExpandoObject() as IDictionary<string, Object>;
             ticketProperties.Add("Ticket Summary", "This is a test ticket");
             ticketProperties.Add("Assigned To Group", "HELP DESK");
@@ -24,6 +31,7 @@ namespace Sandbox
             dynamic newTicket = TrackIt_2019.API.Ticket.Create(ticketProperties);
             //dynamic newTicket = new ExpandoObject();
             //newTicket.TicketID = 78536;
+
 
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(newTicket));
             Console.WriteLine();
@@ -45,7 +53,9 @@ namespace Sandbox
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(TrackIt_2019.API.Ticket.Get(newTicket.TicketID)));
             Console.WriteLine();
 
-            TrackIt_2019.API.Ticket.Delete(newTicket.TicketID);
+            */
+
+            //TrackIt_2019.API.Ticket.Delete(newTicket.TicketID);
             Console.WriteLine("and that should be a full life cycle");
             Console.WriteLine("press enter to finish");
             Console.ReadLine();

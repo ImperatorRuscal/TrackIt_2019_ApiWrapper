@@ -7,28 +7,28 @@ namespace TrackIt_2019
 
     public static partial class API
     {
-        public static class Ticket
+        public static class Assignment
         {
             public static dynamic Get(int ID)
             {
-                dynamic result = TrackIt_2019.Util.GetRequest(new string[] { "Tickets", ID.ToString() }).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Ticket);
+                dynamic result = TrackIt_2019.Util.GetRequest(new string[] { "Assignments", ID.ToString() }).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
 
             public static dynamic Create(dynamic newProperties)
             {
                 dynamic request = new ExpandoObject();
                 request.Properties = newProperties;
-                var result = TrackIt_2019.Util.PostRequest(new string[] { "tickets" }, request).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Ticket);
+                var result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments" }, request).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
 
             public static dynamic Update(int TicketID, dynamic updateProperties)
             {
                 dynamic request = new ExpandoObject();
                 request.Properties = updateProperties;
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString() }, request).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Ticket);
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString() }, request).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
 
             public static dynamic Assign(int TicketID, string TechnicianID)
@@ -37,8 +37,8 @@ namespace TrackIt_2019
                 requestProperties.Add("Assigned To Technician", TechnicianID);
                 dynamic request = new ExpandoObject();
                 request.Properties = requestProperties;
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString() }, request).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Ticket);
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString() }, request).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
 
             public static dynamic SetCategory(int TicketID, string CategoryName)
@@ -47,8 +47,8 @@ namespace TrackIt_2019
                 requestProperties.Category = CategoryName;
                 dynamic request = new ExpandoObject();
                 request.Properties = requestProperties;
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString() }, request).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Ticket);
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString() }, request).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
 
             public static dynamic AddNote(int TicketID, string NoteContent, string NoteType = "Technician Note", string ActivityCode = "Note By Technician", bool isPrivate = false)
@@ -58,7 +58,7 @@ namespace TrackIt_2019
                 request.Add("Activity Code", ActivityCode);
                 request.Add("Note", NoteContent);
                 request.Add("Private", isPrivate.ToString());
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString(), "AddNote" }, request).GetAwaiter().GetResult();
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString(), "AddNote" }, request).GetAwaiter().GetResult();
                 return TrackIt_2019.Util.getResultantObject(result.Note);
             }
             public static dynamic AddNote(int TicketID, string NoteContent, TrackIt_2019.NoteType noteType, TrackIt_2019.ActivityCode activityCode, bool isPrivate)
@@ -77,8 +77,8 @@ namespace TrackIt_2019
                 dynamic request = new ExpandoObject();
                 request.StatusName = Status;
                 request.Note = note;
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString(), "ChangeStatus" }, request).GetAwaiter().GetResult();
-                return TrackIt_2019.Util.getResultantObject(result.Note);
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString(), "ChangeStatus" }, request).GetAwaiter().GetResult();
+                return TrackIt_2019.Util.getResultantObject(result.Assignments);
             }
             public static dynamic SetStatus(int TicketID, TrackIt_2019.Status status, string NoteContent, TrackIt_2019.NoteType NoteType, TrackIt_2019.ActivityCode activityCode, bool isPrivate)
             {
@@ -87,7 +87,7 @@ namespace TrackIt_2019
 
             public static bool Delete(int TicketID)
             {
-                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Tickets", TicketID.ToString(), "Delete" }, null).GetAwaiter().GetResult();
+                dynamic result = TrackIt_2019.Util.PostRequest(new string[] { "Assignments", TicketID.ToString(), "Delete" }, null).GetAwaiter().GetResult();
                 return result.success;
             }
         }
