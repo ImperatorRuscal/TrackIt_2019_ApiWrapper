@@ -1,4 +1,6 @@
 # TrackIt_2019_ApiWrapper
+![Maintained by ImperatorRuscal](https://img.shields.io/badge/maintainer-ImperatorRuscal-informational.svg)
+![Last Commit](https://img.shields.io/github/last-commit/ImperatorRuscal/TrackIt_2019_ApiWrapper.svg)
 ## A quick C# static wrapper to handle WebAPI calls for the BMC TrackIt 2019 service desk software.
 
 #### Setup the connection.
